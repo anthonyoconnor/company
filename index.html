@@ -104,19 +104,22 @@
       <div>
         <h3>Company Info</h3>
         <ul>
-          <li><a href="#">About us</a></li>
+          <li><a href="/">About us</a></li>
           <li><a href="/contact.html">Contact us</a></li>
         </ul>
       </div>
 
-
       <div>
         <h3>Subscribe</h3>
         <p>Sign up for our newletter.</p>
-        <form name="email-form" method="POST" data-netlify>
+        <form name="email-form" method="POST" netlify-honeypot="name" netlify>
+          <p style="display: none">
+            <label>Don’t fill this out if you're human: <input name="name" /></label>
+          </p>
           <div class="email-form">
             <span class="form-control-wrap">
-              <input type="email" required name="email" id="email" size="40" class="form-control" placeholder="email">
+              <input type="email" required name="email" id="email" maxlength="200" class="form-control"
+                placeholder="email">
             </span>
             <button type="submit" class="form-control submit">
               <i class="fas fa-chevron-right"></i>
